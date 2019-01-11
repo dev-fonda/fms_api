@@ -21,10 +21,10 @@ Route::middleware('auth:api')->group(function(){
     Route::post('logout', 'AuthController@logout');
     
     // Company
-    Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
-        Route::get('/', 'CompanyController@read');
-        Route::get('/{id}', 'CompanyController@show');
-        Route::post('/create', 'CompanyController@create');
-        Route::post('/update/{id}', 'CompanyController@update');
+    Route::group(['prefix' => 'mewr_hawker', 'as' => 'mewr_hawker.'], function() {
+        Route::get('/', 'MEWRHawkerController@read');
+        Route::get('/{id}', 'MEWRHawkerController@show');
+        Route::post('/create', 'MEWRHawkerController@create');
+        Route::post('/update/{id}', 'MEWRHawkerController@update');
     });
 });
