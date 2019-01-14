@@ -20,11 +20,24 @@ Route::middleware('auth:api')->group(function(){
     Route::post('register', 'AuthController@register');
     Route::post('logout', 'AuthController@logout');
     
+    
+    // ===================================================== MASTERFILE
+
     // Company
     Route::group(['prefix' => 'mewr_hawker', 'as' => 'mewr_hawker.'], function() {
-        Route::get('/', 'MEWRHawkerController@read');
-        Route::get('/{id}', 'MEWRHawkerController@show');
-        Route::post('/create', 'MEWRHawkerController@create');
-        Route::post('/update/{id}', 'MEWRHawkerController@update');
+        Route::get('/', 'MewrHawkerController@read');
+        Route::get('/{id}', 'MewrHawkerController@show');
+        Route::post('/create', 'MewrHawkerController@create');
+        Route::post('/update/{id}', 'MewrHawkerController@update');
     });
+
+    // Company
+    Route::group(['prefix' => 'hdb_hawker', 'as' => 'hdb_hawker.'], function() {
+        Route::get('/', 'HdbHawkerController@read');
+        Route::get('/{id}', 'HdbHawkerController@show');
+        Route::post('/create', 'HdbHawkerController@create');
+        Route::post('/update/{id}', 'HdbHawkerController@update');
+    });
+
+    // ===================================================== MASTERFILE
 });

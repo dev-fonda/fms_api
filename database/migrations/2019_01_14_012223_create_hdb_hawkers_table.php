@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMewrHawkersTable extends Migration
+class CreateHdbHawkersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateMewrHawkersTable extends Migration
      */
     public function up()
     {
-        Schema::create('mewr_hawkers', function (Blueprint $table) {
+        Schema::create('hdb_hawkers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hawker_centre', 100);
-            $table->string('address');
-            $table->float('estimated_gfa')->nullable();
-            $table->integer('no_of_stall')->nullable();
+            $table->string('location');
+            $table->integer('no_of_stall');
             $table->bigInteger('created_by')->nullable();
             $table->bigInteger('updated_by')->nullable();
             $table->timestamps();
@@ -32,6 +30,6 @@ class CreateMewrHawkersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mewr_hawkers');
+        Schema::dropIfExists('hdb_hawkers');
     }
 }
